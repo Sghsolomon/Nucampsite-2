@@ -1,4 +1,4 @@
-import { Col } from "reactstrap";
+import { Col, Button } from "reactstrap";
 
 const Error = ({ errMsg }) => {
   return (

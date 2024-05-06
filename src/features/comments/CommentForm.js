@@ -10,7 +10,8 @@ import {
 } from "reactstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validateCommentForm } from "../../utils/validateCommentForm";
-import { addComment } from "./commentsSlice";
+import { v4 as uuidv4 } from "uuid";
+import { postComment } from "./commentsSlice";
 
 const CommentForm = ({ campsiteId }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -26,7 +27,7 @@ const CommentForm = ({ campsiteId }) => {
       date: new Date(Date.now()).toISOString(),
     };
     console.log(comments);
-    dispatch(addComment(comments));
+    dispatch(postComment(comments));
     setModalOpen(false);
   };
 
